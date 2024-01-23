@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 
@@ -102,6 +103,9 @@ const Bookings = () => {
     }, [url])
     return (
         <div className="mt-12">
+            <Helmet>
+                <title>Bike Services || Booking</title>
+            </Helmet>
             <h1 className="text-center text-3xl my-12 font-bold">Bookings: {bookings.length}</h1>
             <div>
                 <div className="overflow-x-auto">

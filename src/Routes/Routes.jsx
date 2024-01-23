@@ -7,6 +7,9 @@ import SignUp from "../pages/SignUp/SignUp";
 import CheckOut from "../pages/CheckOut/CheckOut";
 import Bookings from "../pages/Bookings/Bookings";
 import PrivetRoute from "./PrivetRoute";
+import Contact from "../pages/Contact/Contact";
+import ServicesPage from "../pages/ServicesPage/ServicesPage";
+
 
 
 
@@ -36,6 +39,17 @@ const router = createBrowserRouter([
                 element: <SignUp></SignUp>
 
             },
+            {
+                path: "/contact",
+                element: <Contact></Contact>
+
+            },
+            {
+                path: "/services",
+                element: <ServicesPage></ServicesPage>
+
+            },
+
             {
                 path: "/booking",
                 element: <PrivetRoute><Bookings></Bookings></PrivetRoute>

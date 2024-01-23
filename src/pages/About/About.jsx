@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import about from "../../../assets/About/about.jpg"
+import about from "../../assets/About/about.jpg"
 
 
 const About = () => {
@@ -8,7 +8,6 @@ const About = () => {
         <>
 
             <div className="hero min-h-screen bg-base-200">
-
                 <div className="hero-content  gap-12 flex-col lg:flex-row">
                     <div className="lg:max-w-1/2">
                         <img src={about} className="rounded-lg shadow-2xl " />
