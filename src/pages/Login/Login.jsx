@@ -19,7 +19,13 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your work has been saved",
+                    showConfirmButton: false,
+                    timer: 1000
+                });
                 navigate(from, { replace: true });
 
 

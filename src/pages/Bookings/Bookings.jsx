@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 
@@ -9,46 +10,73 @@ const Bookings = () => {
     const [bookings, setBookings] = useState([]);
     const navigate = useNavigate();
     const handaleDelete = (id) => {
-        const procces = confirm("Are you sure");
-        if (procces) {
-            console.log("yes", id)
-            fetch(`http://localhost:5000/booking/${id}`, {
-                method: "DELETE",
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/booking/${id}`, {
+                    method: "DELETE",
 
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        alert("Delete Succes")
-                        const remaning = bookings.filter(booking => booking._id !== id);
-                        setBookings(remaning);
-                    }
                 })
-        }
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            const remaning = bookings.filter(booking => booking._id !== id);
+                            setBookings(remaning);
+                        }
+                    })
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+            }
+        });
+
     }
     const handaleUpdateBokking = (id) => {
-        const procces = confirm("Are you sure");
-        if (procces) {
-            console.log("yes", id)
-            fetch(`http://localhost:5000/booking/${id}`, {
-                method: "PATCH",
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify({ status: "confirm" })
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.modifiedCount > 0) {
-                        alert("Update Succes")
-                        const remaning = bookings.filter(booking => booking._id !== id);
-                        const update = bookings.find(booking => booking._id === id);
-                        update.status = "confirm";
-                        const neqBokking = [update, ...remaning];
-                        setBookings(neqBokking);
-                    }
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Confirm"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/booking/${id}`, {
+                    method: "PATCH",
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({ status: "confirm" })
                 })
-        }
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.modifiedCount > 0) {
+                            Swal.fire({
+                                position: "top-end",
+                                icon: "success",
+                                title: "Confirm Seucces",
+                                showConfirmButton: false,
+                                timer: 500
+                            });
+                            const remaning = bookings.filter(booking => booking._id !== id);
+                            const update = bookings.find(booking => booking._id === id);
+                            update.status = "confirm";
+                            const neqBokking = [update, ...remaning];
+                            setBookings(neqBokking);
+                        }
+                    })
+            }
+        });
     }
 
 

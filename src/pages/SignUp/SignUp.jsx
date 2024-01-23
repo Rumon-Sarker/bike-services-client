@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import SocailLogin from "../Shered/SocailLogin/SocailLogin";
+import Swal from "sweetalert2";
 
 
 const SignUp = () => {
@@ -20,6 +21,13 @@ const SignUp = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Login Success",
+                    showConfirmButton: false,
+                    timer: 1000
+                });
                 console.log(user)
             })
             .catch(error => console.log(error));

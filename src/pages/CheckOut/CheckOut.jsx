@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const CheckOut = () => {
 
@@ -36,7 +37,13 @@ const CheckOut = () => {
             .then(data => {
                 console.log(data)
                 if (data.insertedId) {
-                    alert("Success")
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Booking Success",
+                        showConfirmButton: false,
+                        timer: 500
+                    });
                 }
             })
 
@@ -75,7 +82,7 @@ const CheckOut = () => {
                     </div>
                 </div>
                 <div className="form-control mt-6">
-                    <input type="submit" className="btn btn-primary" value="Order" />
+                    <input type="submit" className="btn btn-primary" value="Booking" />
                 </div>
             </form>
 

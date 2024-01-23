@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const SocailLogin = () => {
     const { socailLogin } = useContext(AuthContext);
@@ -9,6 +10,13 @@ const SocailLogin = () => {
     const handaleSocailLogin = () => {
         socailLogin()
             .then(result => {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Login Success",
+                    showConfirmButton: false,
+                    timer: 1000
+                });
                 navigate('/')
                 console.log(result)
             })

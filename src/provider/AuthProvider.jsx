@@ -40,6 +40,7 @@ const AuthProvider = ({ children }) => {
                 email: currentUser.email
             }
             if (currentUser && currentUser.email) {
+
                 console.log("LoginUser", loginUser)
                 fetch('http://localhost:5000/jwt', {
                     method: 'POST',
