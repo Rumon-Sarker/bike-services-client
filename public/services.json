@@ -1,62 +1,20 @@
 [
     {
         "service_id": "01",
-        "title": "Spring Changing",
-        "img": "https://i.ibb.co/zs7NWsQ/services1.jpg",
+        "title": "Car Engine Chnage",
+        "img": "https://i.ibb.co/HPgqCTP/images.jpg",
         "price": "$15"
     },
     {
         "service_id": "02",
         "title": "Engin Washing",
-        "img": "https://i.ibb.co/C6QZxZy/services2.jpg",
+        "img": "https://i.ibb.co/kyfLkTQ/6.jpg",
         "price": "$40"
     },
     {
         "service_id": "03",
-        "title": "All Bike Test",
-        "img": "https://i.ibb.co/WsKLJb9/services3.jpg",
+        "title": "Car Oil",
+        "img": "https://i.ibb.co/Dp7TvNm/images.jpg",
         "price": "$50"
-    },
-    {
-        "service_id": "04",
-        "title": "Breack Feeting",
-        "img": "https://i.ibb.co/T2xL04d/services4.jpg",
-        "price": "$20"
-    },
-    {
-        "service_id": "05",
-        "title": "Stand Repare",
-        "img": "https://i.ibb.co/k9jqL0n/services5.jpg",
-        "price": "$15"
-    },
-    {
-        "service_id": "06",
-        "title": "Showkab Change",
-        "img": "https://i.ibb.co/n3bY75K/services6.jpg",
-        "price": "$40"
-    },
-    {
-        "service_id": "07",
-        "title": "Tair Changing",
-        "img": "https://i.ibb.co/3rTVD9k/services7.jpg",
-        "price": "$100"
-    },
-    {
-        "service_id": "08",
-        "title": "Mobil Changing",
-        "img": "https://i.ibb.co/0y3BV3K/services8.jpg",
-        "price": "$35"
-    },
-    {
-        "service_id": "09",
-        "title": "Beraring Changeing",
-        "img": "https://i.ibb.co/cJ4dC4x/services9.jpg",
-        "price": "$30"
-    },
-    {
-        "service_id": "10",
-        "title": "Chine Recover",
-        "img": "https://i.ibb.co/gMJMbbB/services10.jpg",
-        "price": "50$"
     }
 ]

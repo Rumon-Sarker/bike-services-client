@@ -42,7 +42,7 @@ const AuthProvider = ({ children }) => {
             if (currentUser && currentUser.email) {
 
                 console.log("LoginUser", loginUser)
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://test-nine-flame-81.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

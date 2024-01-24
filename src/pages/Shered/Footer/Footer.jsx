@@ -10,8 +10,8 @@ const Footer = () => {
         <div>
             <footer className="footer p-10 bg-neutral text-neutral-content">
                 <aside>
-                    <p><Link to="/" className="btn btn-ghost font-extrabold text-xl"><h1>BIKE-<span className="text-orange-600">SERVICES</span></h1></Link></p>
-                    <p>Our Bike Sercives Center<br />Ouer Starting at 2022</p>
+                    <p className="-ml-5"><Link to="/" className="btn btn-ghost font-extrabold text-xl"><h1>BIKE-<span className="text-orange-600">SERVICES</span></h1></Link></p>
+                    <p>Our Bike Sercives Center<br />Starting at 2022</p>
                 </aside>
                 <nav>
                     <header className="footer-title">Service Name</header>

@@ -10,7 +10,7 @@ const Contact = () => {
     };
     const { handleSubmit, reset, register } = useForm();
     const handaleSubmit = (data) => {
-        fetch('http://localhost:5000/contact', {
+        fetch('https://test-nine-flame-81.vercel.app/contact', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

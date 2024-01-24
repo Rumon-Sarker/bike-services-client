@@ -26,7 +26,7 @@ const CheckOut = () => {
             date,
         }
 
-        fetch("http://localhost:5000/booking", {
+        fetch("https://test-nine-flame-81.vercel.app/booking", {
             method: "POST",
             headers: {
                 'content-type': "application/json"

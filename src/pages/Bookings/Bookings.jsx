@@ -21,7 +21,7 @@ const Bookings = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/booking/${id}`, {
+                fetch(`https://test-nine-flame-81.vercel.app/booking/${id}`, {
                     method: "DELETE",
 
                 })
@@ -52,7 +52,7 @@ const Bookings = () => {
             confirmButtonText: "Confirm"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/booking/${id}`, {
+                fetch(`https://test-nine-flame-81.vercel.app/booking/${id}`, {
                     method: "PATCH",
                     headers: {
                         'content-type': 'application/json'
@@ -81,7 +81,7 @@ const Bookings = () => {
     }
 
 
-    const url = `http://localhost:5000/booking?email=${user?.email}`;
+    const url = `https://test-nine-flame-81.vercel.app/booking?email=${user?.email}`;
     useEffect(() => {
         fetch(url, {
             method: 'GET',

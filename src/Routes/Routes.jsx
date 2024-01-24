@@ -58,7 +58,7 @@ const router = createBrowserRouter([
             {
                 path: "/checkout/:id",
                 element: <PrivetRoute><CheckOut></CheckOut></PrivetRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://test-nine-flame-81.vercel.app/services/${params.id}`)
             },
 
         ]
